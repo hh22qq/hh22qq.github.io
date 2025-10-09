@@ -8,7 +8,10 @@ export default function App() {
   const skills: string[] = CONFIG.skills || [];
   const projects = CONFIG.projects?.external?.projects || [];
   const experiences: any[] = (CONFIG as any).experiences || [];
-  const certs: any[] = (CONFIG as any).certifications || [];
+  const certs: any[] = (CONFIG as any).certifications || [];// src/App.tsx 상단의 다른 const들 옆에 추가
+  const timeline: any[] = (CONFIG as any).timeline || [];
+  
+  
 
   return (
     <div className="container">
@@ -93,7 +96,25 @@ export default function App() {
             ))}
           </div>
         </section>
+      )}{/* Timeline */}
+      {timeline.length > 0 && (
+        <section className="section">
+          <h2>Timeline</h2>
+          <div className="card">
+            <div className="timeline">
+              {timeline.map((t, i) => (
+                <div className="ti" key={i}>
+                  <h3 style={{margin:'0 0 4px'}}>{t.title}</h3>
+                  <p className="meta">{t.date}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
+      
+      
+      
 
       <footer className="footer">
         © {new Date().getFullYear()} {name}. Powered by Vite • GitHub Pages

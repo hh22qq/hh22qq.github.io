@@ -43,5 +43,13 @@ const CONFIG = {
     },{ name: '투자자산운용사', issuer: '한국금융투자협회', date: '2022-09'
     }
   ],
+  timeline: [
+    { title: '성균관대학교 공학계열 입학', date: '2018.03' },
+    { title: '성균관대학교 시스템경영공학과 진입', date: '2019.03' },
+    { title: '성균관대학교 컬처앤테크놀로지학부 복수전공', date: '2022.03' },
+    { title: '디캠프 직접투자팀 인턴', date: '2022.07 – 2023.01' },
+    { title: 'KICPA 취득', date: '2025.09' },
+    { title: '삼일회계법인 Assurance 본부 입사', date: '2025.12 (예정)' },
+  ]
 };
 export default CONFIG;
