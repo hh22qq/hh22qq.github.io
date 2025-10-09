@@ -1,28 +1,69 @@
-/* === Portfolio Theme (inspired by congchu/web-porfolio) ===  */
+/* === gitprofile-like theme (lofi-ish, pure CSS) === */
 :root{
-    --bg:#fafafa; --card:#ffffff; --ink:#0f172a; --muted:#64748b; --brand:#111827;
-    --accent:#ff5a5f; --border:#e5e7eb; --max:980px;
+    --bg:#f6f7f9;
+    --card:#ffffff;
+    --ink:#111827;
+    --muted:#6b7280;
+    --brand:#0ea5e9;         /* primary */
+    --ring:#3b82f6;          /* avatar ring */
+    --border:#e5e7eb;
+    --max:1024px;
   }
   *{box-sizing:border-box}
   html,body,#root{height:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-  a{color:inherit;text-decoration:none}
-  .container{max-width:var(--max);margin:0 auto;padding:56px 20px}
-  .header{display:flex;gap:28px;align-items:center;margin-bottom:28px}
-  .avatar{width:92px;height:92px;border-radius:50%;object-fit:cover;box-shadow:0 6px 22px rgba(0,0,0,.08)}
-  .title{font-size:36px;line-height:1.15;margin:0 0 6px;font-weight:800;letter-spacing:-0.01em}
-  .subtitle{margin:0;color:var(--muted)}
-  .actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
-  .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card)}
-  .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .section{margin-top:34px}
-  .section h2{font-size:20px;margin:0 0 14px; font-weight:800; letter-spacing:.02em}
-  .card-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
-  .card h3{margin:0 0 8px;font-size:18px}
-  .card p{margin:0;color:var(--muted)}
-  .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
-  .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:#fff}
-  .footer{margin:38px 0 10px;color:var(--muted);text-align:center;font-size:14px}
-  hr.sep{height:1px;border:0;background:var(--border);margin:24px 0}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  }
+  a{color:inherit; text-decoration:none}
+  .container{max-width:var(--max); margin:0 auto; padding:56px 20px}
+  
+  /* header/hero */
+  .header{display:flex; gap:24px; align-items:center; margin-bottom:24px}
+  .avatar-wrap{position:relative; width:96px; height:96px}
+  .avatar{
+    width:96px; height:96px; border-radius:50%; object-fit:cover;
+    border:4px solid #fff; box-shadow:0 4px 18px rgba(2,6,23,.12);
+  }
+  .avatar-wrap::after{
+    content:""; position:absolute; inset:-4px; border-radius:50%;
+    border:2.5px solid var(--ring); pointer-events:none;
+  }
+  .title{font-weight:800; font-size:38px; line-height:1.1; letter-spacing:-.01em; margin:0 0 6px}
+  .subtitle{margin:0; color:var(--muted); font-weight:600}
+  .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--card);
+  }
+  .btn.primary{background:var(--ink); color:#fff; border-color:var(--ink)}
+  .btn.ghost{background:transparent}
+  
+  /* divider */
+  .sep{height:1px; border:0; background:var(--border); margin:28px 0}
+  
+  /* sections */
+  .section{margin-top:28px}
+  .section h2{font-size:20px; margin:0 0 14px; font-weight:800; letter-spacing:.02em}
+  
+  /* tags */
+  .tags{display:flex; gap:10px; flex-wrap:wrap}
+  .tag{
+    display:inline-block; padding:6px 12px; border-radius:999px;
+    background:#f1f5f9; border:1px solid var(--border); color:#0f172a; font-weight:600
+  }
+  
+  /* grid + card */
+  .grid{display:grid; gap:18px}
+  .grid-2{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:18px;
+    padding:18px; box-shadow:0 8px 28px rgba(2,6,23,.06)
+  }
+  .card h3{margin:0 0 6px; font-size:18px; font-weight:800}
+  .card p{margin:0; color:var(--muted)}
+  .card .meta{margin:6px 0 12px; color:var(--muted); font-size:14px}
+  
+  /* footer */
+  .footer{margin:40px 0 8px; color:var(--muted); text-align:center; font-size:14px}
   
