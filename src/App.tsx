@@ -1,5 +1,5 @@
 // src/App.tsx
-import CONFIG from '../gitprofile.config';
+import CONFIG from './config';
 import './styles.css';
 
 type ExtProj = { title: string; description: string; imageUrl?: string; link: string };
