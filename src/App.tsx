@@ -7,14 +7,12 @@ export default function App() {
   const social = CONFIG.social || {};
   const skills: string[] = CONFIG.skills || [];
   const projects = CONFIG.projects?.external?.projects || [];
+  const experiences: any[] = (CONFIG as any).experiences || [];
   const certs: any[] = (CONFIG as any).certifications || [];
-
-  const showProjects = projects.length > 0;
-  const showCerts = !showProjects && certs.length > 0; // 프로젝트 없으면 자격사항 보여주기
 
   return (
     <div className="container">
-      {/* Header (gitprofile 느낌) */}
+      {/* Header */}
       <header className="header">
         <div className="avatar-wrap">
           <img className="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="avatar" />
@@ -24,8 +22,6 @@ export default function App() {
           <p className="subtitle">Developer • Portfolio</p>
           <div className="actions">
             <a className="btn primary" href={`https://github.com/${name}`} target="_blank" rel="noreferrer">GitHub</a>
-            {social.linkedin && <a className="btn" href={`https://www.linkedin.com/in/${social.linkedin}`} target="_blank" rel="noreferrer">LinkedIn</a>}
-            {social.website && <a className="btn" href={social.website} target="_blank" rel="noreferrer">Website</a>}
             {social.email && <a className="btn ghost" href={`mailto:${social.email}`}>Email</a>}
           </div>
         </div>
@@ -43,8 +39,8 @@ export default function App() {
         </section>
       )}
 
-      {/* Projects (있으면 우선 표시) */}
-      {showProjects && (
+      {/* Projects (있으면 표시) */}
+      {projects.length > 0 && (
         <section className="section">
           <h2>Projects</h2>
           <div className="grid grid-2">
@@ -59,8 +55,31 @@ export default function App() {
         </section>
       )}
 
-      {/* Certifications (Projects 없을 때 대체 섹션) */}
-      {showCerts && (
+      {/* ✅ Experience */}
+      {experiences.length > 0 && (
+        <section className="section">
+          <h2>Experience</h2>
+          <div className="grid">
+            {experiences.map((e, i) => (
+              <article className="card" key={i}>
+                <h3 style={{marginBottom:6}}>{e.position} @ {e.company}</h3>
+                <p className="meta">
+                  {e.from} – {e.to}{e.url ? ` • ${e.url}` : ''}
+                </p>
+                {e.summary && <p style={{marginTop:8}}>{e.summary}</p>}
+                {Array.isArray(e.stack) && e.stack.length > 0 && (
+                  <div className="tags" style={{marginTop:12}}>
+                    {e.stack.map((t: string) => <span className="tag" key={t}>{t}</span>)}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ✅ Certifications */}
+      {certs.length > 0 && (
         <section className="section">
           <h2>Certifications</h2>
           <div className="grid grid-2">
