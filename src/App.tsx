@@ -18,7 +18,7 @@ export default function App() {
       {/* Header */}
       <header className="header">
         <div className="avatar-wrap">
-          <img className="avatar" src="/avatar.jpg" alt="Profile photo of hh22qq" />
+          <img className="avatar" src="/avatar.png" alt="Profile photo of hh22qq" />
         </div>
         <div>
           <h1 className="title">{name}</h1>
