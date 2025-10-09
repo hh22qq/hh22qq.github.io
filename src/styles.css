@@ -1,19 +1,28 @@
-:root { --brand:#0ea5e9; --text:#0f172a; --muted:#64748b; --bg:#fff; --card:#f8fafc }
-*{box-sizing:border-box} html,body,#root{height:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial}
-.container{max-width:980px;margin:0 auto;padding:40px 20px}
-.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#e2f2fb;color:#075985;font-weight:600;margin:4px 6px 0 0}
-.card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
-.grid{display:grid;gap:18px}
-.grid-3{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-a.button{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text)}
-a.button.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
-a.link{color:var(--brand);text-decoration:none}
-a.link:hover{text-decoration:underline}
-.section{margin-top:28px}
-h1{font-size:36px;margin:6px 0 4px}
-h2{font-size:22px;margin:0 0 10px}
-.hero{display:flex;align-items:center;gap:20px;margin-bottom:10px}
-.avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--brand)}
-.muted{color:var(--muted)}
-.footer{margin-top:30px;color:var(--muted);font-size:14px;text-align:center}
+/* === Portfolio Theme (inspired by congchu/web-porfolio) ===  */
+:root{
+    --bg:#fafafa; --card:#ffffff; --ink:#0f172a; --muted:#64748b; --brand:#111827;
+    --accent:#ff5a5f; --border:#e5e7eb; --max:980px;
+  }
+  *{box-sizing:border-box}
+  html,body,#root{height:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:var(--max);margin:0 auto;padding:56px 20px}
+  .header{display:flex;gap:28px;align-items:center;margin-bottom:28px}
+  .avatar{width:92px;height:92px;border-radius:50%;object-fit:cover;box-shadow:0 6px 22px rgba(0,0,0,.08)}
+  .title{font-size:36px;line-height:1.15;margin:0 0 6px;font-weight:800;letter-spacing:-0.01em}
+  .subtitle{margin:0;color:var(--muted)}
+  .actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card)}
+  .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .section{margin-top:34px}
+  .section h2{font-size:20px;margin:0 0 14px; font-weight:800; letter-spacing:.02em}
+  .card-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted)}
+  .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:#fff}
+  .footer{margin:38px 0 10px;color:var(--muted);text-align:center;font-size:14px}
+  hr.sep{height:1px;border:0;background:var(--border);margin:24px 0}
+  

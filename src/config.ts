@@ -21,6 +21,23 @@ const CONFIG = {
       ],
     },
   },
+  certifications: [
+    {
+      name: '공인회계사',
+      issuer: '금융감독원',
+      date: '2025-09',
+    },
+    {
+      name: 'ADsP',
+      issuer: '한국데이터산업진흥원',
+      date: '2024-07',
+    },
+    {
+      name: '투자자산운용사',
+      issuer: '한국금융투자협회',
+      date: '2022-07',
+    }
+  ],
 };
 
 export default CONFIG;
